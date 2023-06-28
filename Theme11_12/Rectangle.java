@@ -15,7 +15,7 @@ public class Rectangle extends Polygon {
 
 	@Override
 	public void draw() {
-		System.out.println("[長方形を描画]点(" + this.p.getX() + "," + this.p.getY() + ")を基準として" +
+		System.out.println("[長方形(矩形)を描画]点(" + this.p.getX() + "," + this.p.getY() + ")を基準として" +
 				"幅" + this.width + "高さ" + this.height + "の長方形");
 	}
 
