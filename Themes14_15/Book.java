@@ -1,14 +1,9 @@
 package review.kadai15_re;
 
 public class Book {
-	private int seq;
 	private String title;
 	private int price;
 	private String author;
-
-	public void setSeq(int seq) {
-		this.seq =seq;
-	}
 	
 	public String getTitle() {
 		return title;
