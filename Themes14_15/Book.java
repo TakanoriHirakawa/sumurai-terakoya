@@ -1,37 +1,53 @@
-package review.kadai15;
+package review.kadai15_re;
 
 public class Book {
-	 private int price;
-	 private String name;
-	 private String author;
-	 
-	 public Book(String name,int price,String author) {
-	 	this.name=name;
-	 	this.price=price;
-	 	this.author=author;
-	 }
-	 public Book() {
-		 	this.name="未登録";
-		 	this.price=0;
-		 	this.author="未登録";
-		 }
-	public int getPrice() {
-		return this.price;
+	private int seq;
+	private String title;
+	private int price;
+	private String author;
+
+	public void setSeq(int seq) {
+		this.seq =seq;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	
+	public String getTitle() {
+		return title;
 	}
-	public String getName() {
-		return this.name;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public int getPlice() {
+		return price;
 	}
+
+	public void setPlice(int plice) {
+		this.price = plice;
+	}
+
 	public String getAuthor() {
-		return this.author;
+		return author;
 	}
+
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	 
+
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o instanceof Book) {
+			Book b = (Book) o;
+			if (this.title.equals(b.title) && (this.author.equals(b.author))) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public String toString() {
+		return "書籍名:"+this.title+"/価格:"+this.price+"/著者名:"+this.author+"を追加します。";
+	}
 }
