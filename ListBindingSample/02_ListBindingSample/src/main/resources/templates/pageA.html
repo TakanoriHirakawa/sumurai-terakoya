@@ -1,0 +1,26 @@
+<!-- pageA.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>PageA</title>
+</head>
+
+<body>
+	<form th:action="@{/pageB}" th:object="${myForm}" method="post">
+		<table>
+			<tr th:each="formA,stat : *{listA}">
+				<td>
+					<input type="text" th:field="*{listA[__${stat.index}__].name}" placeholder="Name" />
+				</td>
+				<td>
+					<input type="number" th:field="*{listA[__${stat.index}__].age}" placeholder="Age" />
+				</td>
+			</tr>
+		</table>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+
+</html>
